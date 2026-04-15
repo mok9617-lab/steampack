@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-04-13T03:27:36.017948+00:00",
+  "case_count": 12,
+  "parser_metrics": {
+    "total_variants": 48,
+    "pass_count": 48,
+    "pass_rate": 1.0
+  },
+  "recommendation_metrics": {
+    "total_cases": 12,
+    "nonempty_rate": 1.0,
+    "preferred_genre_hit_rate": 0.9167,
+    "hard_constraint_violation_rate": 0.0
+  },
+  "parse_failures": [],
+  "recommendation_failures": []
+}

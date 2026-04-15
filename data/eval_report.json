@@ -1,0 +1,554 @@
+{
+  "generated_at": "2026-04-14T06:25:08.370612+00:00",
+  "case_count": 12,
+  "parser_metrics": {
+    "total_variants": 48,
+    "pass_count": 32,
+    "pass_rate": 0.6667
+  },
+  "recommendation_metrics": {
+    "total_cases": 12,
+    "nonempty_rate": 1.0,
+    "hit_at_k": 0.75,
+    "mrr_at_k": 0.75,
+    "precision_at_k": 0.75,
+    "ndcg_at_k": 0.75,
+    "hard_constraint_violation_rate": 0.0,
+    "hard_violation_item_rate": 0.0
+  },
+  "parse_failures": [
+    {
+      "query": "힐링되는 싱글 RPG 추천해줘. 공포는 싫어",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "힐링되는 싱글 RPG 추천해줘. 공포는 싫어",
+        "normalized_query": "힐링되는 싱글 rpg 추천해줘 공포는 싫어",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "RPG"
+        ],
+        "excluded_terms": [
+          "rpg 공포"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [
+          "Healing"
+        ],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "힐링되는싱글RPG추천해줘.공포는싫어",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "힐링되는싱글RPG추천해줘.공포는싫어",
+        "normalized_query": "힐링되는싱글rpg추천해줘 공포는싫어",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "RPG"
+        ],
+        "excluded_terms": [
+          "힐링되는싱글rpg추천해줘 공포"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [
+          "Healing"
+        ],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "힐링되는 싱글 RPG 추천좀해줘. 공포는 싫어",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "힐링되는 싱글 RPG 추천좀해줘. 공포는 싫어",
+        "normalized_query": "힐링되는 싱글 rpg 추천좀해줘 공포는 싫어",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "RPG"
+        ],
+        "excluded_terms": [
+          "추천좀해줘 공포"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [
+          "Healing"
+        ],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "!!! 힐링되는 싱글 RPG 추천해줘. 공포는 싫어 ???",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 힐링되는 싱글 RPG 추천해줘. 공포는 싫어 ???",
+        "normalized_query": "힐링되는 싱글 rpg 추천해줘 공포는 싫어",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "RPG"
+        ],
+        "excluded_terms": [
+          "rpg 공포"
+        ],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [
+          "Healing"
+        ],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "공포는 제외하고 생존 게임 추천",
+      "expected": {
+        "preferred_genres": [
+          "Survival"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "공포는 제외하고 생존 게임 추천",
+        "normalized_query": "공포는 제외하고 생존 게임 추천",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Survival"
+        ],
+        "excluded_terms": [
+          "공포"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "공포는제외하고생존게임추천",
+      "expected": {
+        "preferred_genres": [
+          "Survival"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "공포는제외하고생존게임추천",
+        "normalized_query": "공포는제외하고생존게임추천",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Survival"
+        ],
+        "excluded_terms": [
+          "공포"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "공포는 제외하고 생존 게임 추천좀",
+      "expected": {
+        "preferred_genres": [
+          "Survival"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "공포는 제외하고 생존 게임 추천좀",
+        "normalized_query": "공포는 제외하고 생존 게임 추천좀",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Survival"
+        ],
+        "excluded_terms": [
+          "공포"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "!!! 공포는 제외하고 생존 게임 추천 ???",
+      "expected": {
+        "preferred_genres": [
+          "Survival"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "!!! 공포는 제외하고 생존 게임 추천 ???",
+        "normalized_query": "공포는 제외하고 생존 게임 추천",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Survival"
+        ],
+        "excluded_terms": [
+          "공포"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "싱글로 천천히 할 수 있는 시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "싱글로천천히할수있는시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로천천히할수있는시뮬레이션",
+        "normalized_query": "싱글로천천히할수있는시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "싱글로 천천히 할 수 있는 시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "!!! 싱글로 천천히 할 수 있는 시뮬레이션 ???",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 싱글로 천천히 할 수 있는 시뮬레이션 ???",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "호러 말고 인디 게임",
+      "expected": {
+        "preferred_genres": [
+          "Indie"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "호러 말고 인디 게임",
+        "normalized_query": "호러 말고 인디 게임",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Indie"
+        ],
+        "excluded_terms": [
+          "호러"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "호러말고인디게임",
+      "expected": {
+        "preferred_genres": [
+          "Indie"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "호러말고인디게임",
+        "normalized_query": "호러말고인디게임",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Indie"
+        ],
+        "excluded_terms": [
+          "호러"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "호러 말고 인디 게임",
+      "expected": {
+        "preferred_genres": [
+          "Indie"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "호러 말고 인디 게임",
+        "normalized_query": "호러 말고 인디 게임",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Indie"
+        ],
+        "excluded_terms": [
+          "호러"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    },
+    {
+      "query": "!!! 호러 말고 인디 게임 ???",
+      "expected": {
+        "preferred_genres": [
+          "Indie"
+        ],
+        "excluded": [
+          "Horror"
+        ],
+        "must_have": [],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "!!! 호러 말고 인디 게임 ???",
+        "normalized_query": "호러 말고 인디 게임",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [
+          "Horror",
+          "Indie"
+        ],
+        "excluded_terms": [
+          "호러"
+        ],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      }
+    }
+  ],
+  "recommendation_failures": []
+}

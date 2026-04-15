@@ -1,0 +1,1558 @@
+{
+  "summary": {
+    "generated_at": "2026-04-13T05:57:36.622710Z",
+    "sample_count": 100,
+    "empty_count": 15,
+    "violation_count": 80,
+    "violation_rate": 0.8,
+    "pass_rate": 0.2
+  },
+  "samples": [
+    {
+      "query": "??? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ???? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ???? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? FPS ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? FPS ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ?? ?? FPS ????. ?? ??? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????? ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ????? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ????? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ???? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ???? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? FPS ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ?? ?? FPS ????. ?? ??? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? RPG ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????? ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ???? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ???? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? FPS ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ?? FPS ????. ?? ??? ????.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ???? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ???? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? FPS ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? FPS ????. ?? ??? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? FPS ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ???? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ???? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? RPG ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ???? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ???? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? RPG ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? FPS ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? FPS ????. ?? ??? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? FPS ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? FPS ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? RPG ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ?? ?? RPG ????. ?? ????.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ???? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ???? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ???? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ???? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? RPG ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? RPG ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? RPG ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? RPG ????. ?? ??? ????.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ???? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ???? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? FPS ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ?? ?? FPS ????. ?? ????.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ???? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ???? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? FPS ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? FPS ????. ?? ????.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ????.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ????? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? FPS ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??? ????.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? RPG ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": false,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? RPG ????. ?? ??.",
+        "normalized_query": "rpg",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? FPS ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? FPS ????. ?? ????.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? FPS ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? ?? FPS ????. ?? ??.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ? ? ?? ?? ????? ????. ?? ??.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ? ? ?? ?? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "??? ?? ?? ????? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "??? ?? ?? ????? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? FPS ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 0,
+      "violation": false,
+      "parsed": {
+        "raw_query": "???? FPS ????. ?? ????.",
+        "normalized_query": "fps",
+        "preferred_genres": [
+          "FPS"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ????? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ????? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ????? ????. ?? ??.",
+      "exclude_target": "Horror",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ????? ????. ?? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+      "exclude_target": "Free To Play",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "?? ?? ? ?? ?? ?? ????. ?? ??? ??.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    },
+    {
+      "query": "???? ?? ?? ????. ?? ????.",
+      "exclude_target": "Multiplayer",
+      "result_count": 5,
+      "violation": true,
+      "parsed": {
+        "raw_query": "???? ?? ?? ????. ?? ????.",
+        "normalized_query": "",
+        "preferred_genres": [],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": []
+      }
+    }
+  ]
+}

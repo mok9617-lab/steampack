@@ -1,0 +1,643 @@
+{
+  "summary": {
+    "query_count": 40,
+    "top_k": 5,
+    "total_recommendations": 200,
+    "unique_recommendations": 52,
+    "duplicate_rate_overall": 0.74,
+    "top1_unique_count": 12,
+    "top1_duplicate_rate": 0.7,
+    "avg_pairwise_jaccard_top5": 0.2369,
+    "most_common_games_overall": [
+      [
+        "R.E.P.O.",
+        26
+      ],
+      [
+        "PUBG: BATTLEGROUNDS",
+        24
+      ],
+      [
+        "Counter-Strike: Source",
+        21
+      ],
+      [
+        "ROUNDS",
+        16
+      ],
+      [
+        "Demonologist",
+        16
+      ],
+      [
+        "DEVOUR",
+        15
+      ],
+      [
+        "Team Fortress 2",
+        6
+      ],
+      [
+        "Grand Theft Auto V Enhanced",
+        5
+      ],
+      [
+        "Garry's Mod",
+        5
+      ],
+      [
+        "Stumble Guys",
+        4
+      ],
+      [
+        "Grand Theft Auto V Legacy",
+        4
+      ],
+      [
+        "Eternal Return",
+        3
+      ],
+      [
+        "TEKKEN 7",
+        3
+      ],
+      [
+        "eFootball™",
+        3
+      ],
+      [
+        "One-armed robber",
+        3
+      ]
+    ],
+    "most_common_top1": [
+      [
+        "PUBG: BATTLEGROUNDS",
+        15
+      ],
+      [
+        "ROUNDS",
+        8
+      ],
+      [
+        "Counter-Strike: Source",
+        5
+      ],
+      [
+        "R.E.P.O.",
+        3
+      ],
+      [
+        "eFootball™",
+        2
+      ],
+      [
+        "TEKKEN 7",
+        1
+      ],
+      [
+        "Outward Definitive Edition",
+        1
+      ],
+      [
+        "DAVE THE DIVER",
+        1
+      ],
+      [
+        "Conan Exiles",
+        1
+      ],
+      [
+        "Fall Guys",
+        1
+      ]
+    ],
+    "modes": {
+      "query": 40
+    },
+    "queries_with_results": 40,
+    "avg_llm_error_count_per_query": 14.0
+  },
+  "rows": [
+    {
+      "idx": 1,
+      "query": "﻿스팀에서 할만한 갓겜 뭐 있음?",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Stumble Guys",
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "Eternal Return"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 2,
+      "query": "요즘 스팀에서 시간 녹이는 게임 뭐냐",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "DEVOUR",
+        "ROUNDS",
+        "Counter-Strike: Source"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 3,
+      "query": "스팀 할인 중인데 이건 꼭 사라 하는 거 있음?",
+      "mode": "query",
+      "names": [
+        "TEKKEN 7",
+        "PUBG: BATTLEGROUNDS",
+        "Counter-Strike: Source",
+        "Grand Theft Auto V Enhanced",
+        "Fall Guys"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 4,
+      "query": "스토리 좋은 스팀 게임 추천 좀",
+      "mode": "query",
+      "names": [
+        "R.E.P.O.",
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "DEVOUR"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 5,
+      "query": "혼자 하기 좋은 스팀 게임 뭐 없냐",
+      "mode": "query",
+      "names": [
+        "Outward Definitive Edition",
+        "Hotline Miami 2: Wrong Number",
+        "eFootball™",
+        "Marvel's Midnight Suns",
+        "The Elder Scrolls V: Skyrim Special Edition"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 6,
+      "query": "스팀에서 중독성 강한 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "DEVOUR",
+        "Counter-Strike: Source",
+        "Demonologist"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 7,
+      "query": "가볍게 시작했다가 오래 붙잡는 게임 추천해줘",
+      "mode": "query",
+      "names": [
+        "DAVE THE DIVER",
+        "Ori and the Will of the Wisps",
+        "Loop Hero",
+        "Skul: The Hero Slayer",
+        "Brotato"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 8,
+      "query": "자유도 높은 스팀 게임 뭐가 재밌냐",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Garry's Mod",
+        "R.E.P.O.",
+        "Party Animals",
+        "Team Fortress 2"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 9,
+      "query": "롤 질렸는데 대체할 스팀 게임 뭐있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "ROUNDS",
+        "Counter-Strike: Source",
+        "Grand Theft Auto V Legacy"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 10,
+      "query": "친구랑 같이 할 스팀 게임 추천좀",
+      "mode": "query",
+      "names": [
+        "Conan Exiles",
+        "V Rising",
+        "The Riftbreaker",
+        "Deep Rock Galactic",
+        "No Rest for the Wicked"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 11,
+      "query": "스팀에서 컨트롤 많이 안 타는 게임 뭐 없냐",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "Counter-Strike: Source",
+        "DEVOUR",
+        "Demonologist"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 12,
+      "query": "돈값 하는 스팀 게임 하나만 추천해봐",
+      "mode": "query",
+      "names": [
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "ROUNDS",
+        "One-armed robber"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 13,
+      "query": "그래픽 괜찮고 몰입감 좋은 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "R.E.P.O.",
+        "Wallpaper Engine"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 14,
+      "query": "스팀에서 평 좋은데 진짜 재밌는 거 뭐냐",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "R.E.P.O.",
+        "DEVOUR",
+        "Counter-Strike: Source"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 15,
+      "query": "노가다 적고 깔끔하게 즐길 수 있는 게임 추천좀",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Garry's Mod",
+        "R.E.P.O.",
+        "Grand Theft Auto V Legacy",
+        "Hand Simulator"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 16,
+      "query": "스팀에서 힐링겜 뭐 하나만 추천해줘",
+      "mode": "query",
+      "names": [
+        "Fall Guys",
+        "Stardew Valley",
+        "Overcooked! 2",
+        "People Playground",
+        "Don't Starve"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 17,
+      "query": "스트레스 풀기 좋은 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "Counter-Strike: Source",
+        "DEVOUR",
+        "R.E.P.O."
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 18,
+      "query": "인생겜 느낌 나는 스팀 게임 뭐있냐",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "DEVOUR",
+        "Demonologist",
+        "ROUNDS"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 19,
+      "query": "그냥 아무 생각 없이 하기 좋은 게임 추천좀",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Garry's Mod",
+        "R.E.P.O.",
+        "Grand Theft Auto V Legacy",
+        "ULTRAKILL"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 20,
+      "query": "지금 시작해도 안 늦은 스팀 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Counter-Strike: Source",
+        "Demonologist",
+        "DEVOUR",
+        "R.E.P.O."
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 21,
+      "query": "스팀에서 요즘 평타 이상은 치는 게임 뭐 있음?",
+      "mode": "query",
+      "names": [
+        "eFootball™",
+        "Team Fortress 2",
+        "Brawlhalla",
+        "ROUNDS",
+        "Stumble Guys"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 22,
+      "query": "플레이 타임 대비 만족도 높은 게임 추천 좀",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Garry's Mod",
+        "Totally Accurate Battle Simulator",
+        "Team Fortress 2",
+        "Gunfire Reborn"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 23,
+      "query": "스팀에서 숨겨진 꿀겜 같은 거 없냐",
+      "mode": "query",
+      "names": [
+        "Counter-Strike: Source",
+        "HoloCure - Save the Fans!",
+        "Demonologist",
+        "Stumble Guys",
+        "Forza Horizon 4"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 24,
+      "query": "요즘 유저들 많이 하는 스팀 게임 뭐야",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "ROUNDS",
+        "Eternal Return",
+        "DEVOUR"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 25,
+      "query": "엔딩 보고 나서 여운 남는 게임 하나만 추천해줘",
+      "mode": "query",
+      "names": [
+        "R.E.P.O.",
+        "Demonologist",
+        "ULTRAKILL",
+        "Grand Theft Auto V Enhanced",
+        "DEVOUR"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 26,
+      "query": "스팀 라이브러리 채울만한 게임 뭐 하나 없냐",
+      "mode": "query",
+      "names": [
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "Grand Theft Auto V Enhanced",
+        "Hunt: Showdown 1896"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 27,
+      "query": "요즘 사서 후회 안 하는 스팀 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Counter-Strike: Source",
+        "Demonologist",
+        "R.E.P.O.",
+        "DEVOUR"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 28,
+      "query": "초반만 재밌는 거 말고 끝까지 재밌는 게임 뭐냐",
+      "mode": "query",
+      "names": [
+        "Undertale",
+        "Lethal Company",
+        "Team Fortress 2",
+        "Plants vs. Zombies GOTY Edition",
+        "The Past Within"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 29,
+      "query": "패드로 하기 좋은 스팀 게임 추천 좀",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "R.E.P.O.",
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "One-armed robber"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 30,
+      "query": "한 번 시작하면 계속 생각나는 게임 뭐 있어",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "TEKKEN 7",
+        "Eternal Return",
+        "DEVOUR",
+        "Grand Theft Auto V Enhanced"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 31,
+      "query": "스팀에서 요즘 입문용으로 괜찮은 게임 뭐 있음?",
+      "mode": "query",
+      "names": [
+        "eFootball™",
+        "Team Fortress 2",
+        "Brawlhalla",
+        "Street Fighter™ 6",
+        "DAVE THE DIVER"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 32,
+      "query": "할인 아니어도 살 가치 있는 게임 뭐냐",
+      "mode": "query",
+      "names": [
+        "Counter-Strike: Source",
+        "PUBG: BATTLEGROUNDS",
+        "One-armed robber",
+        "Grand Theft Auto V Legacy",
+        "Grand Theft Auto V Enhanced"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 33,
+      "query": "초보자도 적응 쉬운 스팀 게임 추천 좀",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Stumble Guys",
+        "R.E.P.O.",
+        "Hand Simulator",
+        "Counter-Strike: Source"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 34,
+      "query": "반복 플레이 해도 안 질리는 게임 뭐 있어",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "Demonologist",
+        "DEVOUR",
+        "TEKKEN 7"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 35,
+      "query": "멀티 안 해도 충분히 재밌는 게임 뭐냐",
+      "mode": "query",
+      "names": [
+        "DRAGON BALL: Sparking! ZERO",
+        "Divinity: Original Sin 2 - Definitive Edition",
+        "Albion Online",
+        "Conan Exiles",
+        "The Riftbreaker"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 36,
+      "query": "플레이 타임 짧은데 임팩트 있는 게임 추천해줘",
+      "mode": "query",
+      "names": [
+        "ROUNDS",
+        "Garry's Mod",
+        "Totally Accurate Battle Simulator",
+        "Hand Simulator",
+        "Team Fortress 2"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 37,
+      "query": "최근에 나온 스팀 게임 중에 괜찮은 거 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "Counter-Strike: Source",
+        "DEVOUR",
+        "R.E.P.O."
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 38,
+      "query": "컨텐츠 많아서 오래 즐길 수 있는 게임 뭐냐",
+      "mode": "query",
+      "names": [
+        "R.E.P.O.",
+        "PUBG: BATTLEGROUNDS",
+        "Demonologist",
+        "Counter-Strike: Source",
+        "ROUNDS"
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 39,
+      "query": "버그 없고 완성도 높은 게임 뭐 있음",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "Counter-Strike: Source",
+        "Demonologist",
+        "DEVOUR",
+        "R.E.P.O."
+      ],
+      "llm_error_count": 14
+    },
+    {
+      "idx": 40,
+      "query": "분위기 독특한 스팀 게임 하나만 추천해줘",
+      "mode": "query",
+      "names": [
+        "PUBG: BATTLEGROUNDS",
+        "R.E.P.O.",
+        "Counter-Strike: Source",
+        "Demonologist",
+        "ROUNDS"
+      ],
+      "llm_error_count": 14
+    }
+  ]
+}

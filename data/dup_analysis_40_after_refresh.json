@@ -1,0 +1,569 @@
+{
+  "query_count": 40,
+  "top_k": 5,
+  "total_recommendation_slots": 200,
+  "unique_games": 25,
+  "duplicate_slots": 175,
+  "duplicate_rate_percent": 87.5,
+  "queries_with_llm_errors": 0,
+  "queries_with_fallback_mode": 0,
+  "top_duplicate_games": [
+    {
+      "app_id": 1229490,
+      "name": "ULTRAKILL",
+      "count": 33
+    },
+    {
+      "app_id": 508440,
+      "name": "Totally Accurate Battle Simulator",
+      "count": 31
+    },
+    {
+      "app_id": 242760,
+      "name": "The Forest",
+      "count": 29
+    },
+    {
+      "app_id": 1222700,
+      "name": "A Way Out",
+      "count": 23
+    },
+    {
+      "app_id": 246900,
+      "name": "Viscera Cleanup Detail",
+      "count": 21
+    },
+    {
+      "app_id": 223710,
+      "name": "Cry of Fear",
+      "count": 12
+    },
+    {
+      "app_id": 1557740,
+      "name": "ROUNDS",
+      "count": 7
+    },
+    {
+      "app_id": 1217060,
+      "name": "Gunfire Reborn",
+      "count": 5
+    },
+    {
+      "app_id": 477160,
+      "name": "Human Fall Flat",
+      "count": 4
+    },
+    {
+      "app_id": 2567870,
+      "name": "Chained Together",
+      "count": 4
+    },
+    {
+      "app_id": 1147560,
+      "name": "Skul: The Hero Slayer",
+      "count": 4
+    },
+    {
+      "app_id": 285900,
+      "name": "Gang Beasts",
+      "count": 4
+    },
+    {
+      "app_id": 774171,
+      "name": "Muse Dash",
+      "count": 3
+    },
+    {
+      "app_id": 1551360,
+      "name": "Forza Horizon 5",
+      "count": 3
+    },
+    {
+      "app_id": 2881650,
+      "name": "Content Warning",
+      "count": 2
+    }
+  ],
+  "per_query": [
+    {
+      "query": "???? ??? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ???? ?? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ?? ??? ?? ? ?? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "Viscera Cleanup Detail",
+        "Crosshair X",
+        "Call of Duty®: Modern Warfare® 2 (2009)",
+        "Don't Starve"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ROUNDS",
+        "ULTRAKILL"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "??? ????? ?? ??? ?? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Chained Together",
+        "The Forest",
+        "Muse Dash",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "? ???? ??? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ?? ? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Chained Together",
+        "The Forest",
+        "Muse Dash",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "??? ??? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Gunfire Reborn",
+        "Human Fall Flat",
+        "Content Warning",
+        "A Way Out",
+        "Forza Horizon 5"
+      ]
+    },
+    {
+      "query": "???? ? ??? ?? ??? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "??? ?? ???? ?? ? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Tom Clancy's Ghost Recon® Wildlands",
+        "DAVE THE DIVER",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "???? ??? ? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ???? ? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ??? ?? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ??? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Chained Together",
+        "The Forest",
+        "Muse Dash",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ??? ?? ?? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "Cry of Fear",
+        "Far Cry® 4",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "?? ????? ???? ?? ? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Skul: The Hero Slayer",
+        "Totally Accurate Battle Simulator",
+        "Cry of Fear",
+        "Gang Beasts"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "??? ??? ? ?? ??? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "Cry of Fear",
+        "Far Cry® 4"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Chained Together",
+        "Human Fall Flat",
+        "Content Warning",
+        "The Binding of Isaac: Rebirth",
+        "GTFO"
+      ]
+    },
+    {
+      "query": "? ? ???? ?? ???? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "???? ?? ????? ??? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ???? ? ?? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ??? ?? ? ??? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ? ?? ??? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Skul: The Hero Slayer",
+        "Totally Accurate Battle Simulator",
+        "Cry of Fear",
+        "Gang Beasts"
+      ]
+    },
+    {
+      "query": "??? ?? ??? ??? ?? ?? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Tom Clancy's Ghost Recon® Wildlands",
+        "DAVE THE DIVER",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ??? ? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Skul: The Hero Slayer",
+        "Totally Accurate Battle Simulator",
+        "Cry of Fear",
+        "Gang Beasts"
+      ]
+    },
+    {
+      "query": "??? ??? ?? ?? ? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Viscera Cleanup Detail",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "The Forest",
+        "A Way Out"
+      ]
+    },
+    {
+      "query": "?? ?? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Cry of Fear",
+        "ROUNDS",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ??? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Skul: The Hero Slayer",
+        "Totally Accurate Battle Simulator",
+        "Cry of Fear",
+        "Gang Beasts"
+      ]
+    }
+  ]
+}

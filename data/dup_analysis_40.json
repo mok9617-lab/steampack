@@ -1,0 +1,569 @@
+{
+  "query_count": 40,
+  "top_k": 5,
+  "total_recommendation_slots": 200,
+  "unique_games": 31,
+  "duplicate_slots": 169,
+  "duplicate_rate_percent": 84.5,
+  "queries_with_llm_errors": 0,
+  "queries_with_fallback_mode": 0,
+  "top_duplicate_games": [
+    {
+      "app_id": 477160,
+      "name": "Human Fall Flat",
+      "count": 32
+    },
+    {
+      "app_id": 1229490,
+      "name": "ULTRAKILL",
+      "count": 26
+    },
+    {
+      "app_id": 242760,
+      "name": "The Forest",
+      "count": 21
+    },
+    {
+      "app_id": 582010,
+      "name": "Monster Hunter: World",
+      "count": 19
+    },
+    {
+      "app_id": 1222700,
+      "name": "A Way Out",
+      "count": 18
+    },
+    {
+      "app_id": 1217060,
+      "name": "Gunfire Reborn",
+      "count": 11
+    },
+    {
+      "app_id": 1551360,
+      "name": "Forza Horizon 5",
+      "count": 8
+    },
+    {
+      "app_id": 774171,
+      "name": "Muse Dash",
+      "count": 8
+    },
+    {
+      "app_id": 508440,
+      "name": "Totally Accurate Battle Simulator",
+      "count": 8
+    },
+    {
+      "app_id": 346110,
+      "name": "ARK: Survival Evolved",
+      "count": 6
+    },
+    {
+      "app_id": 1557740,
+      "name": "ROUNDS",
+      "count": 6
+    },
+    {
+      "app_id": 638970,
+      "name": "Yakuza 0",
+      "count": 5
+    },
+    {
+      "app_id": 1621690,
+      "name": "Core Keeper",
+      "count": 4
+    },
+    {
+      "app_id": 1929610,
+      "name": "Demonologist",
+      "count": 3
+    },
+    {
+      "app_id": 4000,
+      "name": "Garry's Mod",
+      "count": 2
+    }
+  ],
+  "per_query": [
+    {
+      "query": "???? ??? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "MiSide",
+        "Human Fall Flat",
+        "Yakuza 0",
+        "Forza Horizon 5",
+        "Planet Coaster"
+      ]
+    },
+    {
+      "query": "?? ???? ?? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ?? ??? ?? ? ?? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Garry's Mod",
+        "ULTRAKILL",
+        "Monster Hunter: World",
+        "Muse Dash",
+        "Hunt: Showdown 1896"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Crosshair X",
+        "Counter-Strike: Source",
+        "HoloCure - Save the Fans!",
+        "Forza Horizon 4"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Human Fall Flat",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "??? ????? ?? ??? ?? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "? ???? ??? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "??? ?? ? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Human Fall Flat",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "??? ??? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "???? ? ??? ?? ??? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "??? ?? ???? ?? ? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Terraria",
+        "Tom Clancy's Ghost Recon® Wildlands",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "???? ??? ? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Human Fall Flat",
+        "Don't Starve Together",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Human Fall Flat",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ?? ?? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "A Way Out",
+        "People Playground",
+        "Monster Hunter: World",
+        "Five Nights at Freddy's"
+      ]
+    },
+    {
+      "query": "?? ???? ? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Human Fall Flat",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ??? ?? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Garry's Mod",
+        "ULTRAKILL",
+        "Monster Hunter: World",
+        "Muse Dash",
+        "Hunt: Showdown 1896"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ??? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Totally Accurate Battle Simulator",
+        "Demonologist",
+        "Gang Beasts",
+        "Tabletop Simulator"
+      ]
+    },
+    {
+      "query": "???? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ??? ?? ?? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Human Fall Flat",
+        "Don't Starve Together",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ?? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Forza Horizon 5",
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Human Fall Flat",
+        "The Forest"
+      ]
+    },
+    {
+      "query": "?? ????? ???? ?? ? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "?? ?? ?? ? ?? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "??? ??? ? ?? ??? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Gunfire Reborn",
+        "ARK: Survival Evolved",
+        "Content Warning",
+        "A Way Out",
+        "Forza Horizon 5"
+      ]
+    },
+    {
+      "query": "? ? ???? ?? ???? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "???? ?? ????? ??? ?? ? ???",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ???? ? ?? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "???? ?? ?? ?? ?? ?? ?",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ??? ?? ? ??? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    },
+    {
+      "query": "?? ? ?? ??? ??? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "ULTRAKILL",
+        "Totally Accurate Battle Simulator",
+        "Demonologist",
+        "Gang Beasts",
+        "Tabletop Simulator"
+      ]
+    },
+    {
+      "query": "??? ?? ??? ??? ?? ?? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "??? ?? ?? ?? ?? ??? ? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Content Warning",
+        "Gunfire Reborn",
+        "Forza Horizon 5",
+        "It Takes Two",
+        "Demonologist"
+      ]
+    },
+    {
+      "query": "??? ??? ?? ?? ? ?? ?? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Core Keeper",
+        "Yakuza 0",
+        "Terraria",
+        "Tom Clancy's Ghost Recon® Wildlands",
+        "Gunfire Reborn"
+      ]
+    },
+    {
+      "query": "?? ?? ??? ?? ?? ? ??",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "Totally Accurate Battle Simulator",
+        "ULTRAKILL",
+        "Muse Dash",
+        "ROUNDS"
+      ]
+    },
+    {
+      "query": "??? ??? ?? ?? ??? ????",
+      "mode": "query",
+      "llm_errors": 0,
+      "results": [
+        "Human Fall Flat",
+        "The Forest",
+        "A Way Out",
+        "ULTRAKILL",
+        "Monster Hunter: World"
+      ]
+    }
+  ]
+}

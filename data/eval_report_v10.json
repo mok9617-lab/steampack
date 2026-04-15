@@ -1,0 +1,1075 @@
+{
+  "generated_at": "2026-04-15T05:22:56.395942+00:00",
+  "case_count": 60,
+  "parser_metrics": {
+    "total_variants": 240,
+    "pass_count": 196,
+    "pass_rate": 0.8167
+  },
+  "recommendation_metrics": {
+    "total_cases": 60,
+    "nonempty_rate": 1.0,
+    "preferred_genre_hit_rate": 1.0,
+    "hit_at_k": 1.0,
+    "mrr_at_k": 1.0,
+    "precision_at_k": 1.0,
+    "ndcg_at_k": 1.0,
+    "hard_constraint_violation_rate": 0.0,
+    "hard_violation_item_rate": 0.0
+  },
+  "segment_metrics": {
+    "by_domain": {
+      "challenge_rpg": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 4,
+          "pass_rate": 0.3333
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "coop_adventure": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 8,
+          "pass_rate": 0.6667
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "cozy_simulation": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "exclude_f2p_rpg": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 8,
+          "pass_rate": 0.6667
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "exclude_horror_survival": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "f2p_action": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "fast_action": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 8,
+          "pass_rate": 0.6667
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "hard_mix_rpg": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 4,
+          "pass_rate": 0.3333
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "healing_single_rpg": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "hidden_gem_indie": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "indie_adventure": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "indie_no_horror": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "multiplayer_fps": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "multiplayer_survival": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "single_no_multiplayer_action": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 8,
+          "pass_rate": 0.6667
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "single_sim_healing": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 4,
+          "pass_rate": 0.3333
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "single_story_adventure": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 8,
+          "pass_rate": 0.6667
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "story_action": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "story_rpg": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "strategy_simulation": {
+        "parser": {
+          "total_variants": 12,
+          "pass_count": 12,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 3,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      }
+    },
+    "by_difficulty": {
+      "easy": {
+        "parser": {
+          "total_variants": 36,
+          "pass_count": 36,
+          "pass_rate": 1.0
+        },
+        "recommendation": {
+          "total_cases": 9,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "hard": {
+        "parser": {
+          "total_variants": 60,
+          "pass_count": 36,
+          "pass_rate": 0.6
+        },
+        "recommendation": {
+          "total_cases": 15,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      },
+      "medium": {
+        "parser": {
+          "total_variants": 144,
+          "pass_count": 124,
+          "pass_rate": 0.8611
+        },
+        "recommendation": {
+          "total_cases": 36,
+          "nonempty_rate": 1.0,
+          "preferred_genre_hit_rate": 1.0,
+          "hit_at_k": 1.0,
+          "mrr_at_k": 1.0,
+          "precision_at_k": 1.0,
+          "ndcg_at_k": 1.0,
+          "hard_constraint_violation_rate": 0.0,
+          "hard_violation_item_rate": 0.0
+        }
+      }
+    }
+  },
+  "parse_failures": [
+    {
+      "query": "빠르게 몰아치는 액션 게임 추천해줘",
+      "expected": {
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "FastPaced"
+        ]
+      },
+      "actual": {
+        "raw_query": "빠르게 몰아치는 액션 게임 추천해줘",
+        "normalized_query": "빠르게 몰아치는 액션 게임 추천해줘",
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": [
+          "Combat"
+        ]
+      },
+      "domain": "fast_action",
+      "difficulty": "medium"
+    },
+    {
+      "query": "빠르게몰아치는액션게임추천해줘",
+      "expected": {
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "FastPaced"
+        ]
+      },
+      "actual": {
+        "raw_query": "빠르게몰아치는액션게임추천해줘",
+        "normalized_query": "빠르게몰아치는액션게임추천해줘",
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": [
+          "Combat"
+        ]
+      },
+      "domain": "fast_action",
+      "difficulty": "medium"
+    },
+    {
+      "query": "빠르게 몰아치는 액션 게임 추천좀해줘",
+      "expected": {
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "FastPaced"
+        ]
+      },
+      "actual": {
+        "raw_query": "빠르게 몰아치는 액션 게임 추천좀해줘",
+        "normalized_query": "빠르게 몰아치는 액션 게임 추천좀해줘",
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": [
+          "Combat"
+        ]
+      },
+      "domain": "fast_action",
+      "difficulty": "medium"
+    },
+    {
+      "query": "!!! 빠르게 몰아치는 액션 게임 추천해줘 ???",
+      "expected": {
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "FastPaced"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 빠르게 몰아치는 액션 게임 추천해줘 ???",
+        "normalized_query": "빠르게 몰아치는 액션 게임 추천해줘",
+        "preferred_genres": [
+          "Action"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": [
+          "Combat"
+        ]
+      },
+      "domain": "fast_action",
+      "difficulty": "medium"
+    },
+    {
+      "query": "난이도 높은 RPG 추천해줘",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "난이도 높은 RPG 추천해줘",
+        "normalized_query": "난이도 높은 rpg 추천해줘",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "난이도높은RPG추천해줘",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "난이도높은RPG추천해줘",
+        "normalized_query": "난이도높은rpg추천해줘",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "난이도 높은 RPG 추천좀해줘",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "난이도 높은 RPG 추천좀해줘",
+        "normalized_query": "난이도 높은 rpg 추천좀해줘",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "!!! 난이도 높은 RPG 추천해줘 ???",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 난이도 높은 RPG 추천해줘 ???",
+        "normalized_query": "난이도 높은 rpg 추천해줘",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "하드코어한 RPG 게임 추천",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "하드코어한 RPG 게임 추천",
+        "normalized_query": "하드코어한 rpg 게임 추천",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [
+          "Hard"
+        ],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "하드코어한RPG게임추천",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "하드코어한RPG게임추천",
+        "normalized_query": "하드코어한rpg게임추천",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [
+          "Hard"
+        ],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "하드코어한 RPG 게임 추천좀",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "하드코어한 RPG 게임 추천좀",
+        "normalized_query": "하드코어한 rpg 게임 추천좀",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [
+          "Hard"
+        ],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "!!! 하드코어한 RPG 게임 추천 ???",
+      "expected": {
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded": [],
+        "must_have": [],
+        "soft_prefs": [
+          "Challenge"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 하드코어한 RPG 게임 추천 ???",
+        "normalized_query": "하드코어한 rpg 게임 추천",
+        "preferred_genres": [
+          "RPG"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [
+          "Hard"
+        ],
+        "focus": []
+      },
+      "domain": "challenge_rpg",
+      "difficulty": "medium"
+    },
+    {
+      "query": "친구와 같이 할 어드벤처 추천",
+      "expected": {
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Multiplayer"
+        ],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "친구와 같이 할 어드벤처 추천",
+        "normalized_query": "친구와 같이 할 어드벤처 추천",
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "coop_adventure",
+      "difficulty": "medium"
+    },
+    {
+      "query": "친구와같이할어드벤처추천",
+      "expected": {
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Multiplayer"
+        ],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "친구와같이할어드벤처추천",
+        "normalized_query": "친구와같이할어드벤처추천",
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "coop_adventure",
+      "difficulty": "medium"
+    },
+    {
+      "query": "친구와 같이 할 어드벤처 추천좀",
+      "expected": {
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Multiplayer"
+        ],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "친구와 같이 할 어드벤처 추천좀",
+        "normalized_query": "친구와 같이 할 어드벤처 추천좀",
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "coop_adventure",
+      "difficulty": "medium"
+    },
+    {
+      "query": "!!! 친구와 같이 할 어드벤처 추천 ???",
+      "expected": {
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Multiplayer"
+        ],
+        "soft_prefs": []
+      },
+      "actual": {
+        "raw_query": "!!! 친구와 같이 할 어드벤처 추천 ???",
+        "normalized_query": "친구와 같이 할 어드벤처 추천",
+        "preferred_genres": [
+          "Adventure"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "coop_adventure",
+      "difficulty": "medium"
+    },
+    {
+      "query": "싱글로 천천히 할 수 있는 시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "single_sim_healing",
+      "difficulty": "hard"
+    },
+    {
+      "query": "싱글로천천히할수있는시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로천천히할수있는시뮬레이션",
+        "normalized_query": "싱글로천천히할수있는시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "single_sim_healing",
+      "difficulty": "hard"
+    },
+    {
+      "query": "싱글로 천천히 할 수 있는 시뮬레이션",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "single_sim_healing",
+      "difficulty": "hard"
+    },
+    {
+      "query": "!!! 싱글로 천천히 할 수 있는 시뮬레이션 ???",
+      "expected": {
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_prefs": [
+          "Healing"
+        ]
+      },
+      "actual": {
+        "raw_query": "!!! 싱글로 천천히 할 수 있는 시뮬레이션 ???",
+        "normalized_query": "싱글로 천천히 할 수 있는 시뮬레이션",
+        "preferred_genres": [
+          "Simulation"
+        ],
+        "excluded_genres_or_moods": [],
+        "excluded_terms": [],
+        "must_have": [
+          "Singleplayer"
+        ],
+        "soft_preferences": [],
+        "play_style": [],
+        "session_length": [],
+        "difficulty": [],
+        "focus": []
+      },
+      "domain": "single_sim_healing",
+      "difficulty": "hard"
+    }
+  ],
+  "recommendation_failures": []
+}

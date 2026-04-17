@@ -866,6 +866,7 @@ def recommend_games(
     original_query = query
     query = sanitize_user_query(query)
     runtime_errors: list[str] = []
+    similar_to_fallback: dict | None = None
     no_fallback = os.getenv("STRICT_NO_FALLBACK", "").strip() == "1"
 
     def _fail_result(message: str, mode: str = "strict_no_fallback") -> dict:
@@ -880,6 +881,7 @@ def recommend_games(
             "effective_query": effective_query,
             "mode": mode,
             "reference_game": None,
+            "similar_to_fallback": similar_to_fallback,
             "parsed_query": parse_query(effective_query).to_dict(),
             "results": [],
             "llm_errors": errs,
@@ -994,6 +996,50 @@ def recommend_games(
                 else:
                     q_vec = model.encode([effective_query], convert_to_numpy=True, normalize_embeddings=True)[0]
             else:
+                # Fallback: if reference game is not in DB, infer profile traits via LLM
+                # and convert to a normal recommendation query.
+                if llm is not None:
+                    inferred = llm.infer_game_profile_for_similarity(reference_hint)
+                    inferred_query = str(inferred.get("rewritten_query", "")).strip()
+                    has_signal = any(
+                        inferred.get(k)
+                        for k in [
+                            "preferred_genres",
+                            "excluded_genres_or_moods",
+                            "excluded_terms",
+                            "must_have",
+                            "soft_preferences",
+                            "play_style",
+                            "session_length",
+                            "difficulty",
+                            "focus",
+                        ]
+                    )
+                    if inferred_query or has_signal:
+                        effective_query = inferred_query or effective_query
+                        rewritten_query = inferred_query or rewritten_query
+                        query_terms = _extract_query_terms(effective_query)
+                        rule_parsed = parse_query(effective_query)
+                        llm_parsed = ParsedQuery(
+                            raw_query=effective_query,
+                            normalized_query=effective_query,
+                            preferred_genres=list(inferred.get("preferred_genres", [])),
+                            excluded_genres_or_moods=list(inferred.get("excluded_genres_or_moods", [])),
+                            excluded_terms=list(inferred.get("excluded_terms", [])),
+                            must_have=list(inferred.get("must_have", [])),
+                            soft_preferences=list(inferred.get("soft_preferences", [])),
+                            play_style=list(inferred.get("play_style", [])),
+                            session_length=list(inferred.get("session_length", [])),
+                            difficulty=list(inferred.get("difficulty", [])),
+                            focus=list(inferred.get("focus", [])),
+                        )
+                        parsed = _merge_parsed_llm_primary(rule_parsed, llm_parsed)
+                        mode = "similar_to_llm_profile_fallback"
+                        similar_to_fallback = {
+                            "hint": reference_hint,
+                            "inferred_query": effective_query,
+                            "used": True,
+                        }
                 q_vec = model.encode([effective_query], convert_to_numpy=True, normalize_embeddings=True)[0]
         else:
             if model is not None:
@@ -1210,6 +1256,7 @@ def recommend_games(
         "effective_query": effective_query,
         "mode": mode,
         "reference_game": reference_game,
+        "similar_to_fallback": similar_to_fallback,
         "parsed_query": parsed.to_dict(),
         "results": final_results,
         "llm_errors": ((llm.errors if llm is not None else []) + runtime_errors),

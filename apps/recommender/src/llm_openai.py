@@ -343,3 +343,51 @@ class OpenAILLM:
         except Exception as exc:
             self.errors.append(f"guess_game_titles: invalid_json ({exc})")
             return []
+
+    def infer_game_profile_for_similarity(self, game_hint: str) -> dict[str, Any]:
+        if not game_hint:
+            return self._empty_parse_payload(with_rewrite=True)
+        system = (
+            "Return only JSON.\n"
+            "Schema: "
+            '{"rewritten_query":"","preferred_genres":[],"excluded_genres_or_moods":[],"excluded_terms":[],"must_have":[],"soft_preferences":[],"play_style":[],"session_length":[],"difficulty":[],"focus":[]}\n'
+            "Task:\n"
+            "When user asks 'X 같은 게임', infer plausible gameplay traits of X and convert to a query for recommendation.\n"
+            "Rules:\n"
+            "- Keep conservative. If unsure, leave fields empty.\n"
+            "- Do NOT fabricate concrete facts like exact story/price/dev info.\n"
+            "- rewritten_query should be concise Korean preference-style query.\n"
+            "- preferred_genres allowed: RPG, Action, Adventure, Strategy, Simulation, Survival, FPS, Horror, Indie, Free To Play, Casual\n"
+            "- excluded_genres_or_moods allowed: Horror, Free To Play, Multiplayer, RPG, Action, Adventure, Strategy, Simulation, Survival, FPS, Indie, Casual, Racing, Sports, Puzzle, Platformer, Rhythm, Visual Novel, Open World, Crafting, Anime, Card Game, Turn-Based, Violence/Gore, Sexual Content\n"
+            "- must_have allowed: Singleplayer, Multiplayer\n"
+            "- soft_preferences allowed: StoryRich, Healing, Challenge, FastPaced, HiddenGem\n"
+            "- play_style allowed: Relaxed, Competitive, Exploration, BuildCraft, Narrative\n"
+            "- session_length allowed: Short, Long\n"
+            "- difficulty allowed: Easy, Hard\n"
+            "- focus allowed: Combat, Story, Growth, Puzzle, Management\n"
+        )
+        user = f"게임 힌트: {game_hint}"
+        raw = self._chat(system, user)
+        if not raw:
+            self.errors.append("infer_game_profile_for_similarity: empty_response")
+            return self._empty_parse_payload(with_rewrite=True)
+        try:
+            obj = self._load_json_object(raw)
+            out = self._empty_parse_payload(with_rewrite=True)
+            out["rewritten_query"] = str(obj.get("rewritten_query", "")).strip()
+            for key in [
+                "preferred_genres",
+                "excluded_genres_or_moods",
+                "excluded_terms",
+                "must_have",
+                "soft_preferences",
+                "play_style",
+                "session_length",
+                "difficulty",
+                "focus",
+            ]:
+                out[key] = list(obj.get(key, []))
+            return out
+        except Exception as exc:
+            self.errors.append(f"infer_game_profile_for_similarity: invalid_json ({exc})")
+            return self._empty_parse_payload(with_rewrite=True)

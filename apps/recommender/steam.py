@@ -5,15 +5,29 @@ import json
 import sys
 from pathlib import Path
 
-from apps.recommender.src.collector import collect_reviews_for_app_ids
-from apps.recommender.src.config import load_settings
-from apps.recommender.src.db import init_db
-from apps.recommender.src.evaluator import run_evaluation, save_report
-from apps.recommender.src.features import build_review_and_game_embeddings
-from apps.recommender.src.network_diag import print_network_diagnosis
-from apps.recommender.src.preprocess import preprocess_reviews
-from apps.recommender.src.ranker import recommend_games
-from apps.recommender.src.web_ui import run_server
+try:
+    from apps.recommender.src.collector import collect_reviews_for_app_ids
+    from apps.recommender.src.config import load_settings
+    from apps.recommender.src.db import init_db
+    from apps.recommender.src.evaluator import run_evaluation, save_report
+    from apps.recommender.src.features import build_review_and_game_embeddings
+    from apps.recommender.src.network_diag import print_network_diagnosis
+    from apps.recommender.src.preprocess import preprocess_reviews
+    from apps.recommender.src.ranker import recommend_games
+    from apps.recommender.src.web_ui import run_server
+except ModuleNotFoundError:
+    repo_root = Path(__file__).resolve().parents[2]
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
+    from apps.recommender.src.collector import collect_reviews_for_app_ids
+    from apps.recommender.src.config import load_settings
+    from apps.recommender.src.db import init_db
+    from apps.recommender.src.evaluator import run_evaluation, save_report
+    from apps.recommender.src.features import build_review_and_game_embeddings
+    from apps.recommender.src.network_diag import print_network_diagnosis
+    from apps.recommender.src.preprocess import preprocess_reviews
+    from apps.recommender.src.ranker import recommend_games
+    from apps.recommender.src.web_ui import run_server
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -97,6 +111,12 @@ def build_parser() -> argparse.ArgumentParser:
         default="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
         help="SentenceTransformer model name",
     )
+    reactflow_ui = sub.add_parser(
+        "reactflow-ui",
+        help="Run ReactFlow dashboard UI (FastAPI + React)",
+    )
+    reactflow_ui.add_argument("--host", type=str, default="127.0.0.1", help="Bind host")
+    reactflow_ui.add_argument("--port", type=int, default=8010, help="Bind port")
     evaluate = sub.add_parser("evaluate", help="Run automatic evaluation loop")
     evaluate.add_argument("--top-k", type=int, default=5, help="Top K for recommendation eval")
     evaluate.add_argument(
@@ -194,6 +214,22 @@ def main() -> None:
             model_name=args.model_name,
             openai_api_key=settings.openai_api_key,
             openai_model=settings.openai_model,
+        )
+        return
+
+    if args.command == "reactflow-ui":
+        try:
+            import uvicorn
+        except ImportError as exc:
+            raise RuntimeError(
+                "uvicorn is required for reactflow-ui. Install with: pip install uvicorn fastapi"
+            ) from exc
+
+        uvicorn.run(
+            "apps.recommender.reactflow_server:app",
+            host=args.host,
+            port=args.port,
+            reload=True,
         )
         return
 

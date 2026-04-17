@@ -40,44 +40,114 @@ def _inject_dark_theme() -> None:
     st.markdown(
         """
         <style>
+          :root {
+            --text-main: #f3f4f6;
+            --text-sub: #d1d5db;
+            --text-muted: #cbd5e1;
+            --card-bg: #0f172a;
+            --card-line: #334155;
+            --accent: #93c5fd;
+          }
           .stApp {
             background: radial-gradient(circle at 15% 0%, #1f2937 0%, transparent 35%),
                         radial-gradient(circle at 90% 100%, #111827 0%, transparent 40%),
                         #0b1220;
-            color: #e5e7eb;
+            color: var(--text-main);
+            font-family: "Segoe UI", "Noto Sans KR", "Pretendard", sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+          }
+          .block-container {
+            max-width: 1320px;
+            padding-top: 1.2rem;
+          }
+          h1, h2, h3 {
+            color: #ffffff !important;
+            letter-spacing: 0.1px;
+            line-height: 1.35;
+          }
+          p, li, label, .stMarkdown, .stCaption, .stAlert, .stInfo, .stWarning {
+            color: var(--text-main) !important;
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+          }
+          .stCaption {
+            color: var(--text-sub) !important;
+            font-size: 0.94rem !important;
+          }
+          .stTextInput input, .stTextArea textarea {
+            background: #0b1324 !important;
+            color: var(--text-main) !important;
+            border: 1px solid #334155 !important;
+            font-size: 1rem !important;
+          }
+          .stButton button {
+            font-size: 1rem !important;
+            font-weight: 700 !important;
+            padding: 0.6rem 1rem !important;
+            border-radius: 10px !important;
           }
           [data-testid="stMetric"] {
             background: #101827;
-            border: 1px solid #253048;
+            border: 1px solid #334155;
             border-radius: 14px;
-            padding: 10px;
+            padding: 12px;
+          }
+          [data-testid="stMetricLabel"] {
+            color: var(--text-sub) !important;
+            font-size: 0.92rem !important;
+          }
+          [data-testid="stMetricValue"] {
+            color: #ffffff !important;
+            font-size: 1.55rem !important;
+            font-weight: 800 !important;
+          }
+          [data-testid="stDataFrame"] table {
+            font-size: 0.98rem !important;
+          }
+          [data-testid="stDataFrame"] th {
+            font-size: 0.98rem !important;
+            color: #ffffff !important;
+          }
+          [data-testid="stDataFrame"] td {
+            color: #f3f4f6 !important;
+            line-height: 1.55 !important;
           }
           .stage-card {
-            background: #0f172a;
-            border: 1px solid #273449;
+            background: var(--card-bg);
+            border: 1px solid var(--card-line);
             border-radius: 16px;
-            padding: 12px 14px;
-            margin: 8px 0 14px 0;
+            padding: 16px 18px;
+            margin: 10px 0 16px 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
           }
           .stage-title {
-            font-weight: 700;
-            margin-bottom: 4px;
+            font-weight: 800;
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+            color: #ffffff;
           }
           .stage-goal {
-            color: #93c5fd;
-            font-size: 0.95rem;
-            margin-bottom: 6px;
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 7px;
+            font-weight: 600;
           }
           .stage-note {
-            color: #cbd5e1;
-            font-size: 0.86rem;
-            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.97rem;
+            margin-bottom: 12px;
           }
           .block-title {
-            font-size: 0.85rem;
-            color: #93c5fd;
+            font-size: 0.93rem;
+            color: var(--accent);
             font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: 0.3px;
+          }
+          .stExpander {
+            border: 1px solid #334155 !important;
+            border-radius: 12px !important;
           }
         </style>
         """,

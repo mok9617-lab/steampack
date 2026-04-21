@@ -7,6 +7,7 @@ from pathlib import Path
 
 try:
     from apps.recommender.src.collector import collect_reviews_for_app_ids
+    from apps.recommender.src.chroma_store import sync_game_profiles_to_chroma
     from apps.recommender.src.config import load_settings
     from apps.recommender.src.db import init_db
     from apps.recommender.src.evaluator import run_evaluation, save_report
@@ -20,6 +21,7 @@ except ModuleNotFoundError:
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
     from apps.recommender.src.collector import collect_reviews_for_app_ids
+    from apps.recommender.src.chroma_store import sync_game_profiles_to_chroma
     from apps.recommender.src.config import load_settings
     from apps.recommender.src.db import init_db
     from apps.recommender.src.evaluator import run_evaluation, save_report
@@ -132,6 +134,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to save evaluation report JSON",
     )
     sub.add_parser("diagnose-network", help="Check OpenAI/HuggingFace network connectivity")
+    chroma_sync = sub.add_parser("chroma-sync", help="Sync game profile vectors into Chroma DB")
+    chroma_sync.add_argument(
+        "--collection-name",
+        type=str,
+        default="steam_game_profiles",
+        help="Chroma collection name",
+    )
+    chroma_sync.add_argument(
+        "--chroma-path",
+        type=str,
+        default="",
+        help="Chroma persistence directory (default: <db_dir>/chroma or CHROMA_PATH)",
+    )
     sub.add_parser("reset-db", help="Delete all data in DB tables")
 
     return parser
@@ -253,6 +268,21 @@ def main() -> None:
 
     if args.command == "diagnose-network":
         print_network_diagnosis()
+        return
+
+    if args.command == "chroma-sync":
+        result = sync_game_profiles_to_chroma(
+            db_path=settings.db_path,
+            collection_name=args.collection_name or None,
+            chroma_path=(args.chroma_path or None),
+        )
+        print(
+            "Chroma synced profiles: {count} | collection: {collection} | path: {chroma_path}".format(
+                count=result["count"],
+                collection=result["collection"],
+                chroma_path=result["chroma_path"],
+            )
+        )
         return
 
     parser.error("Unknown command")

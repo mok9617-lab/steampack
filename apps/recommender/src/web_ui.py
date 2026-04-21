@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import html
+import json
 import traceback
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -37,193 +38,22 @@ _CATEGORY_ALIAS = {
 }
 
 
-def _page(title: str, body: str) -> bytes:
-    doc = f"""<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{html.escape(title)}</title>
-  <style>
-    :root {{
-      --bg: #f6f4ed;
-      --card: #ffffff;
-      --text: #17212b;
-      --muted: #667085;
-      --line: #e5e7eb;
-      --brand: #0f766e;
-      --brand-weak: #ccfbf1;
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{
-      margin: 0;
-      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 10% 0%, #def7ec 0, transparent 35%),
-        radial-gradient(circle at 90% 100%, #ffe8d6 0, transparent 30%),
-        var(--bg);
-      min-height: 100vh;
-    }}
-    .wrap {{ max-width: 980px; margin: 0 auto; padding: 24px 16px 56px; }}
-    h1 {{ margin: 0 0 8px; }}
-    .sub {{ color: var(--muted); margin-bottom: 16px; }}
-    .card {{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 14px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
-    }}
-    .row {{ display: grid; grid-template-columns: 1fr 110px; gap: 10px; }}
-    input[type=text], input[type=number] {{
-      width: 100%;
-      border: 1px solid #d0d5dd;
-      border-radius: 10px;
-      padding: 11px 12px;
-      font-size: 15px;
-      background: #fff;
-    }}
-    button {{
-      border: none;
-      border-radius: 10px;
-      padding: 11px 14px;
-      font-size: 15px;
-      background: var(--brand);
-      color: #fff;
-      cursor: pointer;
-    }}
-    button:disabled {{
-      opacity: 0.75;
-      cursor: wait;
-    }}
-    .search-status {{
-      margin-top: 10px;
-      color: #115e59;
-      font-size: 13px;
-      min-height: 18px;
-    }}
-    .meta {{ color: var(--muted); font-size: 13px; }}
-    .pill {{
-      display: inline-block;
-      font-size: 12px;
-      border: 1px solid #99f6e4;
-      color: #115e59;
-      background: #ecfeff;
-      padding: 3px 8px;
-      border-radius: 999px;
-      margin-right: 6px;
-      margin-top: 6px;
-    }}
-    .reason {{
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 10px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      font-size: 14px;
-      line-height: 1.5;
-    }}
-    .evidence {{
-      margin-top: 10px;
-      padding-left: 18px;
-      color: #374151;
-    }}
-    .tabs {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 14px; }}
-    .tab-btn {{
-      border: 1px solid #cbd5e1;
-      background: #fff;
-      color: #0f172a;
-      border-radius: 999px;
-      padding: 6px 11px;
-      cursor: pointer;
-      font-size: 13px;
-      text-decoration: none;
-    }}
-    .tab-btn.active {{
-      background: var(--brand-weak);
-      border-color: #5eead4;
-      color: #115e59;
-      font-weight: 600;
-    }}
-    .thumb {{
-      width: 100%;
-      max-width: 460px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      margin: 8px 0 10px;
-      display: block;
-      object-fit: cover;
-    }}
-  </style>
-</head>
-<body>
-  <main class="wrap">{body}</main>
-  <script>
-    (function () {{
-      const form = document.querySelector("form[action='/recommend']");
-      if (!form) return;
-      const button = form.querySelector("button[type='submit']");
-      const status = document.getElementById("search-status");
-      const messages = [
-        "질문을 해석하고 있어요...",
-        "리뷰 근거를 찾는 중이에요...",
-        "장르와 분위기를 맞춰보는 중이에요...",
-        "추천 결과를 정리하고 있어요..."
-      ];
-      let timerId = null;
-
-      form.addEventListener("submit", function () {{
-        if (button) {{
-          button.disabled = true;
-          button.textContent = "검색 중...";
-        }}
-        if (!status) return;
-        let idx = 0;
-        status.style.display = "";
-        status.textContent = messages[idx];
-        timerId = window.setInterval(function () {{
-          idx = (idx + 1) % messages.length;
-          status.textContent = messages[idx];
-        }}, 1400);
-      }});
-
-      window.addEventListener("pageshow", function () {{
-        if (timerId !== null) {{
-          window.clearInterval(timerId);
-          timerId = null;
-        }}
-      }});
-    }})();
-  </script>
-</body>
-</html>
-"""
-    return doc.encode("utf-8")
+def _clip_evidence(text: str, max_chars: int = 220) -> str:
+    t = " ".join((text or "").split()).strip()
+    if len(t) <= max_chars:
+        return t
+    return t[: max(40, max_chars - 1)].rstrip() + "…"
 
 
 def _normalize_categories(genres: list[str], evidence_texts: list[str]) -> list[str]:
-    genre_tokens = {g.lower() for g in genres}
-    ev = " ".join(evidence_texts).lower()
+    genre_tokens = {str(g).lower() for g in genres}
+    ev = " ".join(str(x) for x in evidence_texts).lower()
     out: list[str] = []
     for cat_id, _ in CATEGORY_TABS:
         aliases = _CATEGORY_ALIAS.get(cat_id, set())
         if any(a in genre_tokens for a in aliases) or any(a in ev for a in aliases):
             out.append(cat_id)
     return out
-
-
-def _genre_tabs_html(selected_category: str) -> str:
-    buttons = []
-    all_cls = "tab-btn active" if selected_category == "all" else "tab-btn"
-    buttons.append(f"<button type='button' class='{all_cls}' data-category='all'>전체</button>")
-    for cat_id, label in CATEGORY_TABS:
-        cls = "tab-btn active" if selected_category == cat_id else "tab-btn"
-        buttons.append(
-            f"<button type='button' class='{cls}' data-category='{html.escape(cat_id)}'>{html.escape(label)}</button>"
-        )
-    return "<div class='tabs'>" + "".join(buttons) + "</div>"
 
 
 def _reason_from_item(item: dict) -> str:
@@ -240,143 +70,361 @@ def _reason_from_item(item: dict) -> str:
     recent = int(item.get("recent_review_count", 0))
     pt = int(float(item.get("median_playtime_1y", 0.0)))
     return (
-        f"최근 리뷰 {recent}개 기준 신뢰도는 '{conf}'이며, 긍정 비율은 약 {pos_pct}%입니다. "
-        f"중앙 플레이타임은 약 {pt}분으로 실제 플레이 패턴이 반영된 추천입니다."
+        f"최근 리뷰 {recent}개 기준 추천 확신도는 '{conf}'이며, 최근 만족도는 약 {pos_pct}%입니다. "
+        f"평균 플레이 시간은 약 {pt}분으로 실제 플레이 패턴이 반영된 추천입니다."
     )
 
 
-def _clip_evidence(text: str, max_chars: int = 220) -> str:
-    t = " ".join((text or "").split()).strip()
-    if len(t) <= max_chars:
-        return t
-    return t[: max(40, max_chars - 1)].rstrip() + "…"
-
-
-def _result_cards(result: dict, query: str, top_k: int, selected_category: str) -> str:
-    rows: list[str] = []
-    llm_errors = result.get("llm_errors", []) or []
-    if llm_errors:
-        rows.append("<section class='card'>")
-        rows.append("<div><strong>LLM 로그</strong></div>")
-        rows.append("<ol class='evidence'>")
-        for err in llm_errors[:8]:
-            rows.append(f"<li>{html.escape(str(err))}</li>")
-        rows.append("</ol>")
-        rows.append("</section>")
-
-    rows.append("<section class='card'>")
-    rows.append("<div><strong>장르 필터</strong></div>")
-    rows.append(_genre_tabs_html(selected_category=selected_category))
-    rows.append("</section>")
-
-    label_map = {k: v for k, v in CATEGORY_TABS}
-    result_count = 0
-
-    for i, item in enumerate(result.get("results", []), start=1):
-        game_name = translate_en_to_ko(item.get("name", "Unknown"))
-        genres_ko = ", ".join(genre_to_ko(g) for g in item.get("genres", [])) or "장르 정보 없음"
-        evidence = item.get("evidence_reviews", [])
-        mapped = _normalize_categories(item.get("genres", []), evidence)
-
-        result_count += 1
-        mapped_str = ",".join(mapped)
-
-        rows.append(f"<article class='card' data-categories='{html.escape(mapped_str)}'>")
-        rows.append(f"<h3>{i}. {html.escape(game_name)}</h3>")
-
+def _prepare_result_payload(result: dict, query: str, top_k: int) -> dict:
+    rows: list[dict] = []
+    for item in result.get("results", []) or []:
         app_id = int(item.get("app_id", 0) or 0)
-        steam_url = str(item.get("steam_url") or f"https://store.steampowered.com/app/{app_id}/")
-        image_url = str(
-            item.get("image_url")
-            or f"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{app_id}/header.jpg"
-        )
+        evidence = [str(x) for x in (item.get("evidence_reviews") or [])]
+        evidence_ko = [
+            _clip_evidence(translate_en_to_ko(ev), max_chars=220)
+            for ev in evidence[:4]
+        ]
         rows.append(
-            f"<a href='{html.escape(steam_url)}' target='_blank' rel='noopener noreferrer'>"
-            f"<img class='thumb' src='{html.escape(image_url)}' alt='{html.escape(game_name)} 이미지' loading='lazy' />"
-            "</a>"
+            {
+                "app_id": app_id,
+                "name": str(item.get("name") or "Unknown"),
+                "display_name": translate_en_to_ko(str(item.get("name") or "Unknown")),
+                "genres": [str(g) for g in (item.get("genres") or [])],
+                "genres_ko": [genre_to_ko(str(g)) for g in (item.get("genres") or [])],
+                "categories": _normalize_categories(item.get("genres", []) or [], evidence),
+                "similarity": item.get("similarity"),
+                "recent_review_count": item.get("recent_review_count"),
+                "positive_ratio_1y": item.get("positive_ratio_1y"),
+                "median_playtime_1y": item.get("median_playtime_1y"),
+                "confidence": str(item.get("confidence") or "unknown"),
+                "confidence_ko": confidence_to_ko(item.get("confidence", "unknown")),
+                "reason_ko": _reason_from_item(item),
+                "one_liner_ko": str(item.get("one_liner_ko") or "").strip(),
+                "evidence_ko": evidence_ko,
+                "steam_url": str(item.get("steam_url") or f"https://store.steampowered.com/app/{app_id}/"),
+                "image_url": str(
+                    item.get("image_url")
+                    or f"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{app_id}/header.jpg"
+                ),
+            }
         )
-        rows.append(
-            f"<div style='margin:6px 0 2px'><a href='{html.escape(steam_url)}' target='_blank' rel='noopener noreferrer'>스팀 상점에서 보기</a></div>"
-        )
-        rows.append(
-            "<div class='meta'>유사도 {sim} | 최근 리뷰 {cnt}개 | 긍정비율(1년) {pos} | 중앙 플레이타임 {pt}분</div>".format(
-                sim=item.get("similarity"),
-                cnt=item.get("recent_review_count"),
-                pos=item.get("positive_ratio_1y"),
-                pt=item.get("median_playtime_1y"),
-            )
-        )
-        rows.append(
-            "<div><span class='pill'>신뢰도 {}</span><span class='pill'>{}</span></div>".format(
-                html.escape(confidence_to_ko(item.get("confidence", "unknown"))),
-                html.escape(genres_ko),
-            )
-        )
 
-        if mapped:
-            mapped_labels = [label_map.get(x, x) for x in mapped]
-            rows.append("<div class='meta'>분류: {}</div>".format(", ".join(mapped_labels)))
+    return {
+        "query": query,
+        "top_k": top_k,
+        "llm_errors": [str(x) for x in (result.get("llm_errors", []) or [])][:8],
+        "results": rows,
+        "category_tabs": [{"id": k, "label": v} for k, v in CATEGORY_TABS],
+    }
 
-        rows.append(f"<div class='reason'><strong>추천 이유</strong><br/>{html.escape(_reason_from_item(item))}</div>")
-        one_liner = str(item.get("one_liner_ko") or "").strip()
-        if one_liner:
-            rows.append(f"<div class='meta' style='margin-top:8px'><strong>한줄 평:</strong> {html.escape(one_liner)}</div>")
 
-        evidence_for_view = evidence
-        if evidence_for_view:
-            rows.append("<div class='meta' style='margin-top:8px'>리뷰 근거</div>")
-            rows.append("<ol class='evidence'>")
-            for ev in evidence_for_view[:4]:
-                rows.append(f"<li>{html.escape(_clip_evidence(translate_en_to_ko(ev), max_chars=220))}</li>")
-            rows.append("</ol>")
-
-        rows.append("</article>")
-
-    rows.append(
-        "<section id='filter-empty' class='card' style='display:none'>선택한 장르에 맞는 결과가 없습니다.</section>"
+def _page(initial_query: str, initial_top_k: int) -> bytes:
+    initial_json = json.dumps(
+        {"query": initial_query, "top_k": initial_top_k},
+        ensure_ascii=False,
+    )
+    category_json = json.dumps(
+        [{"id": k, "label": v} for k, v in CATEGORY_TABS],
+        ensure_ascii=False,
     )
 
-    if not result.get("results") or result_count == 0:
-        rows.append("<section class='card'>조건에 맞는 결과가 없습니다. 질문을 조금 바꿔서 다시 시도해 주세요.</section>")
-
-    rows.append(
-        """
-<script>
-(function() {
-  const tabs = Array.from(document.querySelectorAll('.tabs .tab-btn'));
-  const cards = Array.from(document.querySelectorAll('article.card[data-categories]'));
-  const emptyBox = document.getElementById('filter-empty');
-  if (!tabs.length || !cards.length) return;
-
-  function setActive(target) {
-    tabs.forEach((btn) => btn.classList.remove('active'));
-    if (target) target.classList.add('active');
-  }
-
-  function applyFilter(category) {
-    let visible = 0;
-    cards.forEach((card) => {
-      const cats = (card.getAttribute('data-categories') || '').split(',').filter(Boolean);
-      const show = category === 'all' || cats.includes(category);
-      card.style.display = show ? '' : 'none';
-      if (show) visible += 1;
-    });
-    if (emptyBox) emptyBox.style.display = visible === 0 ? '' : 'none';
-  }
-
-  tabs.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-category') || 'all';
-      setActive(btn);
-      applyFilter(category);
-    });
-  });
-})();
-</script>
-        """
+    doc = (
+        "<!doctype html>\n"
+        "<html lang='ko'>\n"
+        "<head>\n"
+        "  <meta charset='utf-8' />\n"
+        "  <meta name='viewport' content='width=device-width, initial-scale=1' />\n"
+        "  <title>Steam 게임 추천</title>\n"
+        "  <style>\n"
+        "    :root {\n"
+        "      --bg: #f6f4ed;\n"
+        "      --card: #ffffff;\n"
+        "      --text: #17212b;\n"
+        "      --muted: #667085;\n"
+        "      --line: #e5e7eb;\n"
+        "      --brand: #0f766e;\n"
+        "      --brand-weak: #ccfbf1;\n"
+        "    }\n"
+        "    * { box-sizing: border-box; }\n"
+        "    body {\n"
+        "      margin: 0;\n"
+        "      font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;\n"
+        "      color: var(--text);\n"
+        "      background:\n"
+        "        radial-gradient(circle at 10% 0%, #def7ec 0, transparent 35%),\n"
+        "        radial-gradient(circle at 90% 100%, #ffe8d6 0, transparent 30%),\n"
+        "        var(--bg);\n"
+        "      min-height: 100vh;\n"
+        "    }\n"
+        "    .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 56px; }\n"
+        "    h1 { margin: 0 0 8px; }\n"
+        "    .sub { color: var(--muted); margin-bottom: 16px; }\n"
+        "    .card {\n"
+        "      background: var(--card);\n"
+        "      border: 1px solid var(--line);\n"
+        "      border-radius: 14px;\n"
+        "      padding: 16px;\n"
+        "      margin-bottom: 14px;\n"
+        "      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);\n"
+        "    }\n"
+        "    .row { display: grid; grid-template-columns: 1fr 110px; gap: 10px; }\n"
+        "    input[type=text], input[type=number] {\n"
+        "      width: 100%;\n"
+        "      border: 1px solid #d0d5dd;\n"
+        "      border-radius: 10px;\n"
+        "      padding: 11px 12px;\n"
+        "      font-size: 15px;\n"
+        "      background: #fff;\n"
+        "    }\n"
+        "    button {\n"
+        "      border: none;\n"
+        "      border-radius: 10px;\n"
+        "      padding: 11px 14px;\n"
+        "      font-size: 15px;\n"
+        "      background: var(--brand);\n"
+        "      color: #fff;\n"
+        "      cursor: pointer;\n"
+        "    }\n"
+        "    button:disabled { opacity: 0.75; cursor: wait; }\n"
+        "    .search-status { margin-top: 10px; color: #115e59; font-size: 13px; min-height: 18px; }\n"
+        "    .meta { color: var(--muted); font-size: 13px; }\n"
+        "    .pill {\n"
+        "      display: inline-block;\n"
+        "      font-size: 12px;\n"
+        "      border: 1px solid #99f6e4;\n"
+        "      color: #115e59;\n"
+        "      background: #ecfeff;\n"
+        "      padding: 3px 8px;\n"
+        "      border-radius: 999px;\n"
+        "      margin-right: 6px;\n"
+        "      margin-top: 6px;\n"
+        "    }\n"
+        "    .reason {\n"
+        "      margin-top: 10px;\n"
+        "      padding: 10px;\n"
+        "      border-radius: 10px;\n"
+        "      background: #f8fafc;\n"
+        "      border: 1px solid #e2e8f0;\n"
+        "      font-size: 14px;\n"
+        "      line-height: 1.5;\n"
+        "    }\n"
+        "    .evidence { margin-top: 10px; padding-left: 18px; color: #374151; }\n"
+        "    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 14px; }\n"
+        "    .tab-btn {\n"
+        "      border: 1px solid #cbd5e1;\n"
+        "      background: #fff;\n"
+        "      color: #0f172a;\n"
+        "      border-radius: 999px;\n"
+        "      padding: 6px 11px;\n"
+        "      cursor: pointer;\n"
+        "      font-size: 13px;\n"
+        "    }\n"
+        "    .tab-btn.active {\n"
+        "      background: var(--brand-weak);\n"
+        "      border-color: #5eead4;\n"
+        "      color: #115e59;\n"
+        "      font-weight: 600;\n"
+        "    }\n"
+        "    .thumb {\n"
+        "      width: 100%;\n"
+        "      max-width: 460px;\n"
+        "      border-radius: 10px;\n"
+        "      border: 1px solid #e5e7eb;\n"
+        "      margin: 8px 0 10px;\n"
+        "      display: block;\n"
+        "      object-fit: cover;\n"
+        "    }\n"
+        "    .error { color: #b42318; }\n"
+        "    @media (max-width: 640px) {\n"
+        "      .row { grid-template-columns: 1fr; }\n"
+        "    }\n"
+        "  </style>\n"
+        "</head>\n"
+        "<body>\n"
+        "  <main id='app' class='wrap'></main>\n"
+        "  <script>\n"
+        f"    window.__INITIAL_STATE__ = {initial_json};\n"
+        f"    window.__CATEGORY_TABS__ = {category_json};\n"
+        "  </script>\n"
+        "  <script crossorigin src='https://unpkg.com/react@18/umd/react.production.min.js'></script>\n"
+        "  <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'></script>\n"
+        "  <script>\n"
+        "    const h = React.createElement;\n"
+        "\n"
+        "    function App() {\n"
+        "      const init = window.__INITIAL_STATE__ || { query: '', top_k: 5 };\n"
+        "      const tabs = window.__CATEGORY_TABS__ || [];\n"
+        "      const [query, setQuery] = React.useState(init.query || '');\n"
+        "      const [topK, setTopK] = React.useState(init.top_k || 5);\n"
+        "      const [loading, setLoading] = React.useState(false);\n"
+        "      const [statusMsg, setStatusMsg] = React.useState('');\n"
+        "      const [errorMsg, setErrorMsg] = React.useState('');\n"
+        "      const [result, setResult] = React.useState(null);\n"
+        "      const [activeCategory, setActiveCategory] = React.useState('all');\n"
+        "\n"
+        "      React.useEffect(() => {\n"
+        "        if (!init.query) return;\n"
+        "        submitSearch(init.query, init.top_k || 5);\n"
+        "      }, []);\n"
+        "\n"
+        "      React.useEffect(() => {\n"
+        "        if (!loading) return;\n"
+        "        const messages = [\n"
+        "          '질문을 해석하고 있어요...',\n"
+        "          '리뷰 근거를 찾는 중이에요...',\n"
+        "          '장르와 분위기를 맞춰보는 중이에요...',\n"
+        "          '추천 결과를 정리하고 있어요...'\n"
+        "        ];\n"
+        "        let idx = 0;\n"
+        "        setStatusMsg(messages[0]);\n"
+        "        const timer = setInterval(() => {\n"
+        "          idx = (idx + 1) % messages.length;\n"
+        "          setStatusMsg(messages[idx]);\n"
+        "        }, 1400);\n"
+        "        return () => clearInterval(timer);\n"
+        "      }, [loading]);\n"
+        "\n"
+        "      async function submitSearch(nextQuery, nextTopK) {\n"
+        "        const q = (nextQuery || '').trim();\n"
+        "        const k = Math.max(1, Math.min(10, parseInt(nextTopK, 10) || 5));\n"
+        "        if (!q) {\n"
+        "          setErrorMsg('질문을 입력해 주세요.');\n"
+        "          return;\n"
+        "        }\n"
+        "\n"
+        "        setLoading(true);\n"
+        "        setErrorMsg('');\n"
+        "        setStatusMsg('검색 준비 중...');\n"
+        "        setActiveCategory('all');\n"
+        "\n"
+        "        try {\n"
+        "          const res = await fetch('/api/recommend', {\n"
+        "            method: 'POST',\n"
+        "            headers: { 'Content-Type': 'application/json' },\n"
+        "            body: JSON.stringify({ query: q, top_k: k })\n"
+        "          });\n"
+        "          const payload = await res.json();\n"
+        "          if (!res.ok) throw new Error(payload.error || ('HTTP ' + res.status));\n"
+        "          setResult(payload);\n"
+        "          const url = new URL(window.location.href);\n"
+        "          url.searchParams.set('query', q);\n"
+        "          url.searchParams.set('top_k', String(k));\n"
+        "          window.history.replaceState({}, '', url.toString());\n"
+        "        } catch (err) {\n"
+        "          setErrorMsg(String(err));\n"
+        "        } finally {\n"
+        "          setLoading(false);\n"
+        "          setStatusMsg('');\n"
+        "        }\n"
+        "      }\n"
+        "\n"
+        "      const rows = (result && result.results) || [];\n"
+        "      const filtered = rows.filter((row) => activeCategory === 'all' || (row.categories || []).includes(activeCategory));\n"
+        "\n"
+        "      return h(React.Fragment, null,\n"
+        "        h('h1', null, 'Steam 게임 추천 테스트'),\n"
+        "        h('div', { className: 'sub' }, '원하는 분위기나 장르를 자유롭게 입력하면 추천 결과와 근거를 보여줍니다.'),\n"
+        "\n"
+        "        h('section', { className: 'card' },\n"
+        "          h('label', { htmlFor: 'query' }, h('strong', null, '질문')),\n"
+        "          h('div', { className: 'row', style: { marginTop: '8px' } },\n"
+        "            h('input', {\n"
+        "              id: 'query',\n"
+        "              type: 'text',\n"
+        "              value: query,\n"
+        "              onChange: (e) => setQuery(e.target.value),\n"
+        "              placeholder: '예: 힐링되는 싱글 RPG 추천해줘. 공포는 제외'\n"
+        "            }),\n"
+        "            h('input', {\n"
+        "              type: 'number',\n"
+        "              min: 1,\n"
+        "              max: 10,\n"
+        "              value: topK,\n"
+        "              onChange: (e) => setTopK(e.target.value)\n"
+        "            })\n"
+        "          ),\n"
+        "          h('div', { style: { marginTop: '10px' } },\n"
+        "            h('button', { disabled: loading, onClick: () => submitSearch(query, topK) }, loading ? '검색 중...' : '추천 받기')\n"
+        "          ),\n"
+        "          h('div', { className: 'search-status', 'aria-live': 'polite' }, statusMsg),\n"
+        "          errorMsg ? h('div', { className: 'meta error', style: { marginTop: '8px' } }, errorMsg) : null\n"
+        "        ),\n"
+        "\n"
+        "        result && result.llm_errors && result.llm_errors.length\n"
+        "          ? h('section', { className: 'card' },\n"
+        "              h('div', null, h('strong', null, 'LLM 로그')),\n"
+        "              h('ol', { className: 'evidence' },\n"
+        "                ...result.llm_errors.map((err, idx) => h('li', { key: 'llm-' + idx }, err))\n"
+        "              )\n"
+        "            )\n"
+        "          : null,\n"
+        "\n"
+        "        result\n"
+        "          ? h('section', { className: 'card' },\n"
+        "              h('div', null, h('strong', null, '장르 필터')),\n"
+        "              h('div', { className: 'tabs' },\n"
+        "                h('button', {\n"
+        "                  className: 'tab-btn ' + (activeCategory === 'all' ? 'active' : ''),\n"
+        "                  onClick: () => setActiveCategory('all')\n"
+        "                }, '전체'),\n"
+        "                ...tabs.map((t) => h('button', {\n"
+        "                  key: t.id,\n"
+        "                  className: 'tab-btn ' + (activeCategory === t.id ? 'active' : ''),\n"
+        "                  onClick: () => setActiveCategory(t.id)\n"
+        "                }, t.label))\n"
+        "              )\n"
+        "            )\n"
+        "          : null,\n"
+        "\n"
+        "        result && filtered.length === 0\n"
+        "          ? h('section', { className: 'card' }, '선택한 장르에 맞는 결과가 없습니다.')\n"
+        "          : null,\n"
+        "\n"
+        "        ...filtered.map((item, idx) => h('article', { className: 'card', key: String(item.app_id) + '-' + idx },\n"
+        "          h('h3', null, (idx + 1) + '. ' + item.display_name),\n"
+        "          h('a', { href: item.steam_url, target: '_blank', rel: 'noopener noreferrer' },\n"
+        "            h('img', { className: 'thumb', src: item.image_url, alt: item.display_name + ' 이미지', loading: 'lazy' })\n"
+        "          ),\n"
+        "          h('div', { style: { margin: '6px 0 2px' } },\n"
+        "            h('a', { href: item.steam_url, target: '_blank', rel: 'noopener noreferrer' }, '스팀 상점에서 보기')\n"
+        "          ),\n"
+        "          h('div', { className: 'meta' }, '취향 일치도 ' + item.similarity + ' | 최근 리뷰 ' + item.recent_review_count + '개 | 최근 만족도(1년) ' + item.positive_ratio_1y + ' | 평균 플레이 시간 ' + item.median_playtime_1y + '분'),\n"
+        "          h('div', null,\n"
+        "            h('span', { className: 'pill' }, '추천 확신도 ' + item.confidence_ko),\n"
+        "            h('span', { className: 'pill' }, (item.genres_ko || []).join(', ') || '장르 정보 없음')\n"
+        "          ),\n"
+        "          item.categories && item.categories.length\n"
+        "            ? h('div', { className: 'meta' }, '분류: ' + item.categories.join(', '))\n"
+        "            : null,\n"
+        "          h('div', { className: 'reason' },\n"
+        "            h('strong', null, '추천 이유'), h('br'), item.reason_ko\n"
+        "          ),\n"
+        "          item.one_liner_ko\n"
+        "            ? h('div', { className: 'meta', style: { marginTop: '8px' } }, h('strong', null, '한줄 평:'), ' ' + item.one_liner_ko)\n"
+        "            : null,\n"
+        "          item.evidence_ko && item.evidence_ko.length\n"
+        "            ? h(React.Fragment, null,\n"
+        "                h('div', { className: 'meta', style: { marginTop: '8px' } }, '리뷰 근거'),\n"
+        "                h('ol', { className: 'evidence' },\n"
+        "                  ...item.evidence_ko.map((ev, i) => h('li', { key: 'ev-' + i }, ev))\n"
+        "                )\n"
+        "              )\n"
+        "            : null\n"
+        "        )),\n"
+        "\n"
+        "        result && rows.length === 0\n"
+        "          ? h('section', { className: 'card' }, '조건에 맞는 결과가 없습니다. 질문을 조금 바꿔서 다시 시도해 주세요.')\n"
+        "          : null\n"
+        "      );\n"
+        "    }\n"
+        "\n"
+        "    ReactDOM.createRoot(document.getElementById('app')).render(h(App));\n"
+        "  </script>\n"
+        "</body>\n"
+        "</html>\n"
     )
 
-    return "\n".join(rows)
+    return doc.encode("utf-8")
 
 
 def run_server(
@@ -390,111 +438,100 @@ def run_server(
     db_path = Path(db_path)
 
     class Handler(BaseHTTPRequestHandler):
-        def _render(self, content: str, status: int = 200) -> None:
-            payload = _page("Steam 게임 추천", content)
+        def _send_html(self, payload: bytes, status: int = 200) -> None:
             self.send_response(status)
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.send_header("Content-Length", str(len(payload)))
             self.end_headers()
             self.wfile.write(payload)
 
-        def _form(self, query: str = "", top_k: int = 5, extra: str = "") -> str:
-            return f"""
-            <h1>Steam 게임 추천 테스트</h1>
-            <div class="sub">원하는 분위기나 장르를 자유롭게 입력하면 추천 결과와 근거를 보여줍니다.</div>
-            <section class="card">
-              <form method="post" action="/recommend">
-                <label for="query"><strong>질문</strong></label>
-                <div class="row" style="margin-top:8px">
-                  <input id="query" name="query" type="text" required value="{html.escape(query)}" placeholder="예: 힐링되는 싱글 RPG 추천해줘. 공포는 제외" />
-                  <input name="top_k" type="number" min="1" max="10" value="{int(top_k)}" />
-                </div>
-                <div style="margin-top:10px"><button type="submit">추천 받기</button></div>
-                <div id="search-status" class="search-status" style="display:none" aria-live="polite"></div>
-              </form>
-            </section>
-            {extra}
-            """
+        def _send_json(self, payload: dict, status: int = 200) -> None:
+            blob = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+            self.send_response(status)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(blob)))
+            self.end_headers()
+            self.wfile.write(blob)
 
-        def _run_recommend(self, query: str, top_k: int) -> None:
-            result = recommend_games(
-                db_path=db_path,
-                query=query,
-                top_k=top_k,
-                model_name=model_name,
-                openai_api_key=openai_api_key,
-                openai_model=openai_model,
-            )
-            self._render(
-                self._form(
-                    query,
-                    top_k,
-                    _result_cards(result, query=query, top_k=top_k, selected_category="all"),
-                )
-            )
+        def _parse_query_topk(self) -> tuple[str, int]:
+            content_type = self.headers.get("Content-Type", "")
+            length = int(self.headers.get("Content-Length", "0"))
+            body_bytes = self.rfile.read(length) if length > 0 else b""
+
+            query = ""
+            top_k_raw = "5"
+
+            if "application/json" in content_type:
+                try:
+                    body = json.loads(body_bytes.decode("utf-8", errors="replace"))
+                    query = str(body.get("query") or "").strip()
+                    top_k_raw = str(body.get("top_k") or "5").strip()
+                except Exception:
+                    query = ""
+                    top_k_raw = "5"
+            else:
+                form = parse_qs(body_bytes.decode("utf-8", errors="replace"))
+                query = (form.get("query", [""])[0] or "").strip()
+                top_k_raw = (form.get("top_k", ["5"])[0] or "5").strip()
+
+            try:
+                top_k = max(1, min(10, int(top_k_raw)))
+            except ValueError:
+                top_k = 5
+
+            return query, top_k
 
         def do_GET(self) -> None:
             parsed_url = urlparse(self.path)
-            if parsed_url.path != "/":
-                self._render("<h1>404</h1><p>Not Found</p>", status=404)
+            if parsed_url.path == "/":
+                qs = parse_qs(parsed_url.query)
+                query = (qs.get("query", [""])[0] or "").strip()
+                top_k_raw = (qs.get("top_k", ["5"])[0] or "5").strip()
+                try:
+                    top_k = max(1, min(10, int(top_k_raw)))
+                except ValueError:
+                    top_k = 5
+
+                page = _page(initial_query=query, initial_top_k=top_k)
+                self._send_html(page)
                 return
 
-            qs = parse_qs(parsed_url.query)
-            query = (qs.get("query", [""])[0] or "").strip()
-            top_k_raw = (qs.get("top_k", ["5"])[0] or "5").strip()
-            try:
-                top_k = max(1, min(10, int(top_k_raw)))
-            except ValueError:
-                top_k = 5
-
-            if not query:
-                self._render(self._form())
+            if parsed_url.path == "/favicon.ico":
+                self.send_response(204)
+                self.end_headers()
                 return
 
-            try:
-                self._run_recommend(query, top_k)
-            except Exception as exc:
-                traceback.print_exc()
-                err = (
-                    "<section class='card'><strong>오류</strong>"
-                    f"<div class='meta'>{html.escape(str(exc))}</div></section>"
-                )
-                self._render(self._form(query, top_k, err), status=500)
+            self._send_html(b"<h1>404</h1><p>Not Found</p>", status=404)
 
         def do_POST(self) -> None:
-            if self.path != "/recommend":
-                self._render("<h1>404</h1><p>Not Found</p>", status=404)
+            if self.path not in {"/api/recommend", "/recommend"}:
+                self._send_json({"error": "Not Found"}, status=404)
                 return
 
-            length = int(self.headers.get("Content-Length", "0"))
-            body = self.rfile.read(length).decode("utf-8", errors="replace")
-            form = parse_qs(body)
-            query = (form.get("query", [""])[0] or "").strip()
-            top_k_raw = (form.get("top_k", ["5"])[0] or "5").strip()
-            try:
-                top_k = max(1, min(10, int(top_k_raw)))
-            except ValueError:
-                top_k = 5
-
+            query, top_k = self._parse_query_topk()
             if not query:
-                self._render(self._form("", top_k, "<section class='card'>질문을 입력해 주세요.</section>"))
+                self._send_json({"error": "질문을 입력해 주세요."}, status=400)
                 return
 
             try:
-                self._run_recommend(query, top_k)
+                result = recommend_games(
+                    db_path=db_path,
+                    query=query,
+                    top_k=top_k,
+                    model_name=model_name,
+                    openai_api_key=openai_api_key,
+                    openai_model=openai_model,
+                )
+                self._send_json(_prepare_result_payload(result, query=query, top_k=top_k))
             except Exception as exc:
                 traceback.print_exc()
-                err = (
-                    "<section class='card'><strong>오류</strong>"
-                    f"<div class='meta'>{html.escape(str(exc))}</div></section>"
-                )
-                self._render(self._form(query, top_k, err), status=500)
+                self._send_json({"error": html.escape(str(exc))}, status=500)
 
         def log_message(self, format: str, *args) -> None:
             return
 
     server = ThreadingHTTPServer((host, port), Handler)
-    print(f"Web UI running at http://{host}:{port}")
+    print(f"React Web UI running at http://{host}:{port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

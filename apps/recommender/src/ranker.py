@@ -13,6 +13,7 @@ from difflib import SequenceMatcher
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+from .chroma_store import query_profiles_from_chroma
 from .db import get_connection
 from .llm_openai import OpenAILLM
 from .query_parser import ParsedQuery, parse_query, sanitize_user_query
@@ -322,6 +323,62 @@ def _load_profile_index(conn, db_key: str) -> dict:
     }
     _PROFILE_INDEX_CACHE[db_key] = cached
     return cached
+
+
+def _load_profile_index_from_chroma(
+    db_path: Path,
+    q_vec: np.ndarray,
+    n_results: int,
+) -> dict | None:
+    try:
+        rows = query_profiles_from_chroma(
+            db_path=db_path,
+            query_vector=q_vec,
+            n_results=n_results,
+        )
+    except Exception:
+        return None
+
+    if not rows:
+        return None
+
+    app_ids: list[int] = []
+    names: list[str] = []
+    genres_list: list[list[str]] = []
+    tags_list: list[list[str]] = []
+    vecs: list[np.ndarray] = []
+    pos_ratios: list[float] = []
+    recent_counts: list[int] = []
+    med_playtimes: list[float] = []
+    sims: list[float] = []
+
+    for row in rows:
+        app_ids.append(int(row["app_id"]))
+        names.append(str(row["name"] or ""))
+        genres_list.append(list(row.get("genres") or []))
+        tags_list.append(list(row.get("tags") or []))
+        vec = row.get("vector")
+        if isinstance(vec, np.ndarray):
+            vecs.append(vec)
+        else:
+            vecs.append(np.zeros((384,), dtype=np.float32))
+        pos_ratios.append(float(row.get("positive_ratio_1y") or 0.0))
+        recent_counts.append(int(row.get("recent_review_count") or 0))
+        med_playtimes.append(float(row.get("median_playtime_1y") or 0.0))
+        sims.append(float(row.get("similarity") or 0.0))
+
+    mat = np.vstack(vecs) if vecs else np.zeros((0, 384), dtype=np.float32)
+    return {
+        "app_ids": app_ids,
+        "names": names,
+        "genres_list": genres_list,
+        "tags_list": tags_list,
+        "vectors": mat,
+        "positive_ratio_1y": pos_ratios,
+        "recent_review_count": recent_counts,
+        "median_playtime_1y": med_playtimes,
+        "sims": np.asarray(sims, dtype=np.float32),
+    }
 
 
 def _resolve_reference_game(
@@ -1059,7 +1116,17 @@ def recommend_games(
                 if norm > 0:
                     q_vec = q_vec / norm
 
-        profile_index = _load_profile_index(conn, str(Path(db_path).resolve()))
+        if q_vec is None:
+            return _fail_result("chroma_required: query_vector_unavailable", mode="chroma_required")
+
+        profile_index = _load_profile_index_from_chroma(
+            db_path=Path(db_path),
+            q_vec=q_vec,
+            n_results=max(top_k * 16, 120),
+        )
+        if profile_index is None:
+            return _fail_result("chroma_required: query_failed_or_empty_collection", mode="chroma_required")
+
         app_ids = profile_index["app_ids"]
         names = profile_index["names"]
         genres_list = profile_index["genres_list"]
@@ -1069,7 +1136,7 @@ def recommend_games(
         pos_ratios = profile_index["positive_ratio_1y"]
         recent_counts = profile_index["recent_review_count"]
         med_playtimes = profile_index["median_playtime_1y"]
-        sims = vectors @ q_vec if (len(app_ids) > 0 and q_vec is not None) else np.array([], dtype=np.float32)
+        sims = np.asarray(profile_index["sims"], dtype=np.float32)
 
         for i in range(len(app_ids)):
             app_id = app_ids[i]
